@@ -1,0 +1,72 @@
+body{
+  background-color: rgb(255, 255, 255);
+}
+#avatar {
+    position: relative;
+    left: 20%;
+    border-radius: 10%;
+  }
+#video {
+  position: relative;
+  left: 20%;
+  border-radius: 10%;
+}
+#falar {
+  background-color: chartreuse;
+  left: 20%;
+  border-radius: 10%;
+}
+#transcrever {
+  position: relative;
+  bottom: 42px;
+  left: 196px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+#transcription {
+  width: 70%;
+  display:flex;
+  position: relative;
+  bottom: 151px;
+  left: 500px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  justify-content: center;
+}
+#translatedText {
+  width: 70%;
+  display:flex;
+  position: relative;
+  bottom: 148px;
+  left: 500px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: #ffeb3b;
+  font-size: 20px;
+  justify-content: center;
+}
+.langButton {
+  border: none;
+  cursor: pointer;
+  background: none;
+  margin: 10px;
+  z-index: 10;
+}
+.selecao{
+  border:solid 2px rgb(19, 232, 4);
+}
+.langButton img {
+  width: 50px;
+  height: auto;
+  user-select: none;
+}
