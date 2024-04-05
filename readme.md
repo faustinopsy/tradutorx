@@ -3,7 +3,9 @@
 > ## Visão Geral
 > O sistema consiste em uma aplicação de tradução de voz com interface web que interage com um backend PHP. 
 > O frontend captura áudio, o backend realiza traduções utilizando APIs de terceiros e retorna o texto traduzido, que é então falado pelo avatar na interface.
-
+[!IMPORTANT]
+> >vídeo exemplo:
+> https://vimeo.com/930678738/b237078579?share=copy
 # Frontend
 > [!TIP]
 > ## Estrutura HTML
@@ -52,12 +54,19 @@
 > Carregue o index.html em um navegador para acessar a interface do usuário.
 > Fale no microfone para capturar áudio e obter a tradução.
 > A tradução será falada pelo avatar na interface.
+> [!IMPORTANT]
 > ## Considerações Adicionais
-> O sistema requer um servidor PHP para o backend.
+> O sistema requer um servidor PHP >8 para o backend.
+> O sistema requer composer e psr-4.
 > As APIs de tradução podem necessitar de chaves de API configuradas no config.php.
-arquivo backend\config\config.php
+> ## criar arquivo backend\config\config.php
+> adicionar a chave de api
 ```
 <?php
   define('API', 'AIza********************'); //google tradutor
   define('OPENAI_API_KEY', 'sk-*************************');//api openai
+```
+Instalar com o composer e no terminal dentro da raiz do projeto
+```
+composer install
 ```
