@@ -27,9 +27,9 @@
 > Comunicação com o backend para obter traduções e armazenar em cache resultados para otimizar buscas iguais no mesmo idioma destino.
 
 > [!TIP]
-# Backend (PHP)
+> # Backend (PHP)
 >
-> ## Classes e Padrões de Design
+> ### Classes e Padrões de Design
 > CacheHandler:
 > 
 > Gerencia o cache de traduções para evitar chamadas repetidas às APIs.
