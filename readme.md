@@ -7,13 +7,15 @@
 > [!IMPORTANT]
 > >vídeo exemplo:
 > https://vimeo.com/930678738/b237078579?share=copy
-# Frontend
+
 > [!TIP]
+> # Frontend
+>
 > ## Estrutura HTML
 > O arquivo index.html define a estrutura da página web. Contém botões para iniciar a captura de áudio, selecionar o idioma e exibir o avatar falante.
 
 > [!IMPORTANT]
-## JavaScript
+> ## JavaScript
 >
 > ### Classe AvatarTradutor:
 > Responsável pela captura de áudio, seleção de idioma, comunicação com o backend para tradução e animação do avatar.
