@@ -36,12 +36,17 @@ class AvatarCompleto {
         const destino = document.getElementById('destino');
         let gpt = document.createElement('option');
         let google = document.createElement('option');
-        gpt.value = 1;
-        gpt.textContent = `GPT`;
-        google.value = 2;
-        google.textContent = `Google`;
-        destino.appendChild(google);
-        destino.appendChild(gpt);
+        let gemma = document.createElement('option');
+            gpt.value = 1;
+            google.value = 2;
+            gemma.value = 3;
+            gpt.textContent = `GPT`;
+            google.textContent = `Google`;
+            gemma.textContent = 'Gemma:2b';
+            destino.appendChild(gemma);
+            destino.appendChild(google);
+            destino.appendChild(gpt);
+            
 
         destino.addEventListener('change', () => this.selectDestino(destino.value));
         this.abreCamera();
@@ -58,7 +63,16 @@ class AvatarCompleto {
         }
     }
     selectDestino(valor) {
-        this.useGPT = valor == 1 ? true : false;
+        if (valor == 1) {
+            this.useGPT = true;
+            this.useGemma = false;
+        } else if (valor == 3) {
+            this.useGPT = false;
+            this.useGemma = true;
+        } else {
+            this.useGPT = false;
+            this.useGemma = false;
+        }
     }
 
     configuraAudio() {
@@ -104,7 +118,8 @@ class AvatarCompleto {
             text: texto,
             langDestino: langdestino,
             source: 'pt',
-            useGPT: this.useGPT
+            useGPT: this.useGPT,
+            useGemma: this.useGemma
         };
 
         fetch(`${this.api}`, {
@@ -120,8 +135,14 @@ class AvatarCompleto {
             if (this.useGPT) {
                 chatbotResponse = data.response;
                 document.getElementById("custo").textContent = `Custo: Prompt-${data.prompt_tokens} Total: ${data.total_token}`
-            } else {
-                chatbotResponse = data.response.data.translations[0].translatedText;
+            } 
+            else if (this.useGemma) {
+                chatbotResponse = data.response;
+            } 
+            else {
+                chatbotResponse = data.response.data.translations
+                    ? data.response.data.translations[0].translatedText
+                    : data.response;
             }
             this.translationElem.innerHTML = chatbotResponse;
             this.falarTexto(chatbotResponse);
